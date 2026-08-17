@@ -2,7 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { FaWhatsapp } from "react-icons/fa";
 import { company } from "@/data/company";
+
+const whatsappHref = `https://wa.me/${company.whatsapp}?text=${encodeURIComponent(company.whatsappMessage)}`;
 
 const links = [
   { href: "#services", label: "Services" },
@@ -48,10 +51,12 @@ export default function Navbar() {
           ))}
           <li>
             <a
-              href="#contact"
-              className="rounded-md bg-accent px-4 py-2 text-sm font-semibold text-background transition-transform hover:-translate-y-0.5"
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-4 py-2 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
             >
-              Start a Project
+              <FaWhatsapp size={16} /> WhatsApp Us
             </a>
           </li>
         </ul>
@@ -76,11 +81,13 @@ export default function Navbar() {
           ))}
           <li>
             <a
-              href="#contact"
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="inline-block rounded-md bg-accent px-4 py-2 text-sm font-semibold text-background"
+              className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-4 py-2 text-sm font-semibold text-white"
             >
-              Start a Project
+              <FaWhatsapp size={16} /> WhatsApp Us
             </a>
           </li>
         </ul>

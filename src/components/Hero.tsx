@@ -2,7 +2,10 @@
 
 import { motion } from "framer-motion";
 import { ArrowDown, Sparkles } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { company } from "@/data/company";
+
+const whatsappHref = `https://wa.me/${company.whatsapp}?text=${encodeURIComponent(company.whatsappMessage)}`;
 
 const container = {
   hidden: {},
@@ -35,10 +38,12 @@ export default function Hero() {
 
         <motion.div variants={item} className="mt-10 flex flex-wrap justify-center gap-4">
           <a
-            href="#contact"
-            className="rounded-md bg-accent px-7 py-3 font-semibold text-background transition-transform hover:-translate-y-0.5"
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-7 py-3 font-semibold text-white transition-transform hover:-translate-y-0.5"
           >
-            Start a Project
+            <FaWhatsapp size={20} /> Chat on WhatsApp
           </a>
           <a
             href="#work"
