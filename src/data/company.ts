@@ -27,6 +27,16 @@ export const company = {
   ],
 };
 
+// Real brands / companies our team has built products for.
+export const clients: string[] = [
+  "Yapı Kredi",
+  "Veripark",
+  "DivDash",
+  "Cognetlabs",
+  "Idenex",
+  "Symmetry Group",
+];
+
 export type Service = {
   icon: string; // lucide icon name
   title: string;
