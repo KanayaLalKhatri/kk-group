@@ -9,6 +9,8 @@ export const company = {
   location: "Karachi, Pakistan",
   email: "kanayalal.khatri7@gmail.com",
   phone: "+92 336 3762106",
+  whatsapp: "923363762106", // international format, no + or spaces
+  whatsappMessage: "Hi KK Group! I'd like to discuss a project.",
   linkedin: "https://www.linkedin.com/in/kanayalal-khatri",
   github: "https://github.com/KanayaLalKhatri",
   intro:

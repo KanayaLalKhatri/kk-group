@@ -1,7 +1,9 @@
 import { Mail, Phone, MapPin } from "lucide-react";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaWhatsapp } from "react-icons/fa";
 import Reveal from "./Reveal";
 import { company } from "@/data/company";
+
+const whatsappHref = `https://wa.me/${company.whatsapp}?text=${encodeURIComponent(company.whatsappMessage)}`;
 
 export default function Contact() {
   return (
@@ -16,12 +18,22 @@ export default function Contact() {
           KK Group is ready to help. Tell us about your idea and we&apos;ll get back to you.
         </p>
 
-        <a
-          href={`mailto:${company.email}`}
-          className="mt-10 inline-block rounded-md bg-accent px-8 py-4 font-semibold text-background transition-transform hover:-translate-y-0.5"
-        >
-          Start a Project
-        </a>
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <a
+            href={`mailto:${company.email}`}
+            className="inline-block rounded-md bg-accent px-8 py-4 font-semibold text-background transition-transform hover:-translate-y-0.5"
+          >
+            Start a Project
+          </a>
+          <a
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-8 py-4 font-semibold text-white transition-transform hover:-translate-y-0.5"
+          >
+            <FaWhatsapp size={20} /> WhatsApp Us
+          </a>
+        </div>
 
         <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-muted">
           <a href={`mailto:${company.email}`} className="inline-flex items-center gap-2 hover:text-accent">
@@ -29,6 +41,9 @@ export default function Contact() {
           </a>
           <a href={`tel:${company.phone.replace(/\s/g, "")}`} className="inline-flex items-center gap-2 hover:text-accent">
             <Phone size={18} /> {company.phone}
+          </a>
+          <a href={whatsappHref} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-accent">
+            <FaWhatsapp size={18} /> WhatsApp
           </a>
           <span className="inline-flex items-center gap-2">
             <MapPin size={18} /> {company.location}
