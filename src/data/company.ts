@@ -11,7 +11,7 @@ export const company = {
   phone: "+92 336 3762106",
   whatsapp: "923363762106", // international format, no + or spaces
   whatsappMessage: "Hi KK Group! I'd like to discuss a project.",
-  linkedin: "https://www.linkedin.com/in/kanayalal-khatri",
+  linkedin: "https://www.linkedin.com/in/kanayalalkhatri-mobile-app-developer/",
   github: "https://github.com/KanayaLalKhatri",
   facebook: "https://facebook.com/studio.kkgroup",
   intro:
