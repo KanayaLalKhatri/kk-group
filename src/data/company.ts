@@ -13,6 +13,7 @@ export const company = {
   whatsappMessage: "Hi KK Group! I'd like to discuss a project.",
   linkedin: "https://www.linkedin.com/in/kanayalal-khatri",
   github: "https://github.com/KanayaLalKhatri",
+  facebook: "https://facebook.com/studio.kkgroup",
   intro:
     "KK Group is a digital product studio crafting secure, high-performance mobile apps and websites. From KYC & biometric onboarding to fintech, e-commerce, and AI-powered experiences — we turn ideas into polished, production-grade products.",
   about: [

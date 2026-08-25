@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin } from "lucide-react";
-import { FaLinkedin, FaGithub, FaWhatsapp } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaWhatsapp, FaFacebook } from "react-icons/fa";
 import Reveal from "./Reveal";
 import { company } from "@/data/company";
 
@@ -48,6 +48,9 @@ export default function Contact() {
           <span className="inline-flex items-center gap-2">
             <MapPin size={18} /> {company.location}
           </span>
+          <a href={company.facebook} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-accent">
+            <FaFacebook size={18} /> Facebook
+          </a>
           <a href={company.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-accent">
             <FaLinkedin size={18} /> LinkedIn
           </a>
