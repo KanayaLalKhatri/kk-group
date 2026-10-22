@@ -30,7 +30,6 @@ export const company = {
 
 // Real brands / companies our team has built products for.
 export const clients: string[] = [
-  "Abu Dhabi Aviation",
   "Quepass",
   "Yapı Kredi",
   "Veripark",
