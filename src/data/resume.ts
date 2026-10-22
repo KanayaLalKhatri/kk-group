@@ -5,25 +5,25 @@
 export const profile = {
   name: "Kanaya Lal Khatri",
   firstName: "Kanaya Lal",
-  title: "Senior Mobile Application Developer",
-  tagline: "Android · Kotlin · Jetpack Compose · Flutter · Multi-Platform",
+  title: "Senior Mobile & Kotlin Multiplatform Developer",
+  tagline: "Kotlin Multiplatform · Compose Multiplatform · Android · iOS · Flutter",
   location: "Karachi, Pakistan",
   email: "kanayalal.khatri7@gmail.com",
   phone: "+92 336 3762106",
   linkedin: "https://www.linkedin.com/in/kanayalalkhatri-mobile-app-developer/",
-  github: "https://github.com/kanayalalkhatri", // update with your real URL
+  github: "https://github.com/KanayaLalKhatri",
   resumeUrl: "/Kanaya_Lal_Khatri_Senior_Mobile_Developer.pdf",
   intro:
-    "I build secure, scalable, production-grade mobile applications for banking, fintech, and digital onboarding. With 7+ years of experience, I specialize in biometric authentication, KYC, OCR, and on-device ML — delivering polished apps for enterprise clients across Pakistan, UAE, and Europe.",
+    "I build secure, production-grade mobile apps and SDKs for banking, fintech, and digital identity — now shipping one Kotlin Multiplatform codebase to both Android and iOS. With 7+ years of experience, I specialize in KYC, biometrics, NFC passports, and on-device ML — delivering polished apps for enterprise clients across Pakistan, UAE, and Europe.",
   about: [
-    "I'm a Senior Mobile Application Developer with 7+ years of experience designing, developing, and shipping high-performance Android and cross-platform apps. My core stack is Kotlin, Java, Jetpack Compose, Flutter, and Dart, backed by deep knowledge of Clean Architecture, MVVM, and modular design.",
+    "I'm a Senior Mobile Application Developer with 7+ years of experience designing, developing, and shipping high-performance Android and cross-platform apps. My core stack is Kotlin Multiplatform, Compose Multiplatform, Jetpack Compose, Flutter, Ktor, Koin and SQLDelight — backed by Clean Architecture, MVI/MVVM, and modular design. Recently I rewrote a production KYC SDK (~84k LOC) to KMP, shipping one .aar for Android and one .xcframework for iOS.",
     "I've led cross-functional mobile teams and delivered apps integrating biometric authentication, KYC, OCR, and machine-learning models. From Tier-1 banking apps to AI-powered digital onboarding, I focus on security, performance, and long-term maintainability.",
   ],
   stats: [
     { value: "7+", label: "Years Experience" },
-    { value: "20+", label: "Apps Delivered" },
+    { value: "20+", label: "Apps & SDKs Shipped" },
     { value: "3", label: "Regions (PK · UAE · EU)" },
-    { value: "98%", label: "ID Verification Accuracy" },
+    { value: "KMP", label: "Android + iOS, one codebase" },
   ],
 };
 
@@ -38,9 +38,15 @@ export type Experience = {
 export const experience: Experience[] = [
   {
     company: "DivDash LLC",
-    role: "Senior Android Developer",
+    role: "Senior Mobile / KMP Developer",
     period: "Sep 2025 – Present",
     points: [
+      "Rewrote the Idenex KYC SDK (~84k LOC) from Android to Kotlin Multiplatform + Compose Multiplatform — 17 modules merged into one .aar (Android) and one .xcframework (iOS), published as com.idenex:idenex:2.0.0 with zero public-API breakage.",
+      "Delivered face liveness (MiniFASNet anti-spoof), TFLite YOLO document OCR and NFC eMRTD passport reading on both platforms (JMRTD on Android, CoreNFC on iOS).",
+      "Built shared-Kotlin crypto for ISO 18013-5 mDoc, COSE/JWS and a from-scratch CBOR codec — 16-test RFC/NIST conformance suite passing on JVM and Kotlin/Native.",
+      "Migrated client apps (Quepass, Use Case App, Idp wallet, Angle) to KMP with Ktor, Koin, SQLDelight and MVI; CI runs the shared test suite on JVM and iOS simulator.",
+      "Built Avix — the ADNOC × Abu Dhabi Aviation check-in kiosk (KMP, Android + iOS) with hardware-backed device identity: P-256 keys in Android Keystore / iOS Secure Enclave, signed handshake, heartbeat and per-visit SDK credentials.",
+      "Set up release pipelines on GitHub Actions: SDK publishing to GitHub Packages with auto version stamps, Android & signed iOS builds to Firebase App Distribution / TestFlight, Crashlytics on both platforms.",
       "Led end-to-end development of KYC and Digital Onboarding solutions — Face Liveness detection, OCR document scanning, and biometric authentication — reducing verification time by 35%.",
       "Architected production-grade Android apps from scratch using MVVM and Clean Architecture for scalability and maintainability.",
       "Built reusable SDK-based Android solutions enabling seamless third-party integrations across multiple client products.",
@@ -127,6 +133,145 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: "Avix — Airport Check-in Kiosk",
+    category: "ADNOC × Abu Dhabi Aviation · KMP",
+    period: "Oct 2026",
+    featured: true,
+    shots: ["/projects/avix/1.jpg", "/projects/avix/2.jpg", "/projects/avix/3.jpg"],
+    colors: ["#3b5bdb", "#14336b"],
+    screenIcon: "✈️",
+    screenLabel: "Kiosk check-in",
+    description:
+      "Biometric check-in kiosk for ADNOC × Abu Dhabi Aviation, built as one Kotlin Multiplatform app for Android tablets and iPad on the Quepass KMP SDK. A kiosk enrols itself, proves its identity with a hardware-backed key, and then runs passenger journeys — secure kiosk face search, user registration, authentication and face login.",
+    highlights: [
+      "Device identity: P-256 key in Android Keystore / iOS Secure Enclave, signed handshake + heartbeat",
+      "AVIX Secure Kiosk API — enrol, check-in, identify, baggage, boarding states",
+      "Same UI on Android & iOS, web-kiosk design system (Figtree, navy tokens)",
+      "GitHub Actions → Firebase App Distribution for Android and iOS",
+    ],
+    tags: ["Kotlin Multiplatform", "Compose MP", "Secure Enclave", "Keystore", "Quepass SDK", "CI/CD"],
+  },
+  {
+    name: "Idenex KYC SDK — Kotlin Multiplatform",
+    category: "KMP SDK · Android + iOS",
+    period: "2025 – Present",
+    featured: true,
+    logo: "/projects/icons/kyc-agent.webp",
+    shots: ["/projects/idenex-kmp/1.jpg", "/projects/idenex-kmp/2.jpg", "/projects/idenex-kmp/3.jpg"],
+    colors: ["#f2c76e", "#c99a2e"],
+    screenIcon: "🛡️",
+    screenLabel: "Verify identity",
+    description:
+      "A full rewrite of a production KYC/identity SDK (~84k LOC) to Kotlin Multiplatform + Compose Multiplatform. 17 Gradle modules ship as one .aar for Android and one .xcframework for iOS, published as com.idenex:idenex:2.0.0.",
+    highlights: [
+      "Face liveness (active + passive, MiniFASNet anti-spoof)",
+      "TFLite YOLO document OCR + NFC eMRTD passport chip reading",
+      "Shared mDoc / COSE / CBOR crypto — RFC test vectors pass on JVM & iOS",
+      "Ktor (47 endpoints) + Koin, adaptive design system, zero API breakage",
+    ],
+    tags: ["Kotlin Multiplatform", "Compose MP", "Ktor", "Koin", "CoreNFC", "TFLite"],
+  },
+  {
+    name: "Quepass — Agent Kiosk (KMP)",
+    category: "Compose Multiplatform · iOS + Android",
+    featured: true,
+    logo: "/projects/icons/quepass.webp",
+    shots: ["/projects/quepass-kmp/1.jpg", "/projects/quepass-kmp/2.jpg", "/projects/quepass-kmp/3.jpg"],
+    colors: ["#94a3b8", "#475569"],
+    screenIcon: "🪪",
+    screenLabel: "Agent Kiosk",
+    description:
+      "Biometric identity kiosk built on the Idenex KMP SDK — platform registration, express verification, face authentication and transactions — running natively on iPhone and Android from one Compose Multiplatform codebase.",
+    highlights: [
+      "Same UI & flows on iOS and Android",
+      "SDK published to GitHub Packages by CI with auto version stamps",
+      "Signed iOS + Android builds shipped via Firebase App Distribution / TestFlight",
+      "Lottie face overlays (Compottie), Crashlytics + shareable diagnostics log",
+    ],
+    tags: ["Compose Multiplatform", "iOS", "Android", "Idenex SDK"],
+  },
+  {
+    name: "Idenex Use Case App",
+    category: "SDK Consumer · Compose Multiplatform",
+    logo: "/projects/icons/idenex-idp.webp",
+    shots: ["/projects/usecase-cmp/1.jpg", "/projects/usecase-cmp/2.jpg", "/projects/usecase-cmp/3.jpg"],
+    colors: ["#f2c76e", "#a16207"],
+    screenIcon: "🎫",
+    screenLabel: "Event check-in",
+    description:
+      "Reference app consuming the published Idenex KMP SDK — event registration, kiosk face & QR check-in, face search and credential verification journeys.",
+    highlights: [
+      "Consumes com.idenex:idenex:2.0.0",
+      "Kiosk face / QR check-in for events",
+      "Verifiable-presentation & credential checks",
+    ],
+    tags: ["Compose Multiplatform", "KMP", "Face Check-in", "QR"],
+  },
+  {
+    name: "Angle Hybird (KMP rebuild)",
+    category: "Family Fintech · Kotlin Multiplatform",
+    logo: "/projects/icons/angle.png",
+    shots: ["/projects/angle-hybird/1.jpg"],
+    colors: ["#6366f1", "#f97316"],
+    screenIcon: "💳",
+    screenLabel: "Parent & Child",
+    description:
+      "Kotlin Multiplatform rebuild of the Angle family-fintech app — shared Ktor + SQLDelight + Koin core, MVI, Compose Multiplatform UI for Android and iOS, with payments, cards, spending limits and Firestore realtime chat. Parity with the legacy app was delivered in five parallel feature branches, then merged and verified.",
+    highlights: [
+      "67 screens swept on device — 0 crashes; iOS launch verified",
+      "68 legacy endpoints in shared Kotlin, SQLDelight cache + MVI",
+      "Parent & child flows: funds, cards, market, top-ups, QR pay",
+      "Firestore realtime chat, iOS edge-swipe back, responsive layouts",
+    ],
+    tags: ["KMP", "Compose MP", "SQLDelight", "Ktor", "Firestore"],
+  },
+  {
+    name: "Hybird Idp — Credential Wallet (KMP)",
+    category: "Digital Identity Wallet · Compose Multiplatform",
+    logo: "/projects/icons/idenex-idp.webp",
+    colors: ["#6366f1", "#312e81"],
+    screenIcon: "🪪",
+    screenLabel: "Wallet",
+    description:
+      "Kotlin Multiplatform port of the Idenex identity-provider wallet — dashboard, credential wallet, card details and sharing, documents with PDF viewing & signing, DTC and OCT credentials, and push notifications on Android (FCM) and iOS (APNs).",
+    highlights: [
+      "Wallet, documents & PDF signing in shared Compose UI",
+      "DTC (passport-chip) and OCT credentials",
+      "FCM + APNs push, secure storage & biometric seams",
+    ],
+    tags: ["Kotlin Multiplatform", "Compose MP", "mDoc", "Push"],
+  },
+  {
+    name: "IndoorNav",
+    category: "Indoor Wayfinding · Compose Multiplatform",
+    colors: ["#22d3ee", "#7c3aed"],
+    screenIcon: "🧭",
+    screenLabel: "Find your way",
+    description:
+      "Indoor navigation app for Android and iOS — a custom Compose Canvas floor-map renderer with pinch-zoom/pan and a hand-written Dijkstra shortest-path router over JSON-defined buildings.",
+    highlights: [
+      "Dijkstra routing over a node/edge graph",
+      "Custom Canvas map with zoom & pan",
+      "Add buildings via JSON — no code change",
+    ],
+    tags: ["Compose Multiplatform", "Algorithms", "Canvas", "iOS"],
+  },
+  {
+    name: "SolitaireKMP",
+    category: "Game · Kotlin Multiplatform",
+    colors: ["#10b981", "#065f46"],
+    screenIcon: "🃏",
+    screenLabel: "Solitaire",
+    description:
+      "Solitaire with a pure-Kotlin rules engine and a loop-aware auto-solver (board signatures prevent cycles) behind an MVI store, fully tested in commonTest.",
+    highlights: [
+      "Pure-Kotlin rules engine",
+      "Auto-solver with cycle detection",
+      "MVI + commonTest coverage",
+    ],
+    tags: ["Kotlin Multiplatform", "MVI", "Testing"],
+  },
+  {
     name: "Yapı Kredi Nederland",
     category: "Mobile Banking App",
     period: "Nov 2023 – Feb 2025",
@@ -146,7 +291,6 @@ export const projects: Project[] = [
   {
     name: "InstaScan",
     category: "Biometric Verification & Onboarding",
-    featured: true,
     colors: ["#64ffda", "#0ea5a3"],
     screenIcon: "🔐",
     screenLabel: "Biometric Verify",
@@ -164,7 +308,6 @@ export const projects: Project[] = [
     category: "Digital Wallet & Loyalty",
     logo: "/projects/icons/angle.png",
     period: "Dec 2021 – Feb 2023",
-    featured: true,
     colors: ["#f59e0b", "#ef4444"],
     screenIcon: "💳",
     screenLabel: "Wallet & Loyalty",
@@ -260,38 +403,6 @@ export const projects: Project[] = [
     tags: ["Kotlin", "mDoc / mDL", "NFC", "BLE"],
   },
   {
-    name: "Idenex KYC Agent",
-    category: "KYC & Onboarding Platform",
-    logo: "/projects/icons/kyc-agent.webp",
-    colors: ["#14b8a6", "#0d9488"],
-    screenIcon: "🧾",
-    screenLabel: "KYC Onboarding",
-    description:
-      "A modular KYC agent platform powering customer onboarding — face liveness, document OCR, and identity verification — built with a multi-module clean architecture.",
-    highlights: [
-      "Face liveness & document OCR",
-      "Multi-module clean architecture",
-      "Reusable across multiple client products",
-    ],
-    tags: ["Kotlin", "Face Liveness", "OCR", "Multi-Module"],
-  },
-  {
-    name: "Quepass",
-    category: "Event Access & Ticketing",
-    logo: "/projects/icons/quepass.webp",
-    colors: ["#f43f5e", "#be123c"],
-    screenIcon: "🎟️",
-    screenLabel: "Event Access",
-    description:
-      "An event access and ticketing app enabling QR-based check-in, pass management, and real-time attendee validation for events.",
-    highlights: [
-      "QR-based event check-in",
-      "Digital pass management",
-      "Real-time attendee validation",
-    ],
-    tags: ["Kotlin", "Android", "QR Scan", "Realtime"],
-  },
-  {
     name: "Idenex VPN",
     category: "Security / VPN",
     logo: "/projects/icons/idenex-vpn.webp",
@@ -310,7 +421,6 @@ export const projects: Project[] = [
   {
     name: "Finger Detection",
     category: "Biometrics / On-Device ML",
-    featured: true,
     logo: "/projects/icons/finger-detection.webp",
     shots: [
       "/projects/finger-detection/1.png",
@@ -410,11 +520,11 @@ export const projects: Project[] = [
 export const skills: { category: string; items: string[] }[] = [
   {
     category: "Languages",
-    items: ["Kotlin", "Java", "Dart", "SQL", "XML"],
+    items: ["Kotlin", "Java", "Swift (interop)", "Dart", "SQL"],
   },
   {
     category: "Mobile & UI",
-    items: ["Android SDK", "Jetpack Compose", "Flutter", "Android Jetpack"],
+    items: ["Kotlin Multiplatform", "Compose Multiplatform", "Jetpack Compose", "Android SDK", "iOS (CoreNFC)", "Flutter"],
   },
   {
     category: "Architecture",
@@ -422,11 +532,11 @@ export const skills: { category: string; items: string[] }[] = [
   },
   {
     category: "Libraries",
-    items: ["Hilt / Dagger 2", "Retrofit", "Room", "Coroutines", "Flow", "WorkManager", "GraphQL"],
+    items: ["Ktor", "Koin", "SQLDelight", "Hilt / Dagger 2", "Retrofit", "Room", "Coroutines & Flow"],
   },
   {
     category: "Security & Auth",
-    items: ["SSL Pinning", "Biometric Auth", "Root Detection", "OAuth 2.0", "JWT", "Encryption"],
+    items: ["NFC eMRTD", "ISO 18013-5 mDoc", "COSE / JWS / CBOR", "Biometric Auth", "SSL Pinning", "OAuth 2.0"],
   },
   {
     category: "AI / ML",
@@ -434,7 +544,7 @@ export const skills: { category: string; items: string[] }[] = [
   },
   {
     category: "DevOps & Tools",
-    items: ["Git", "Jenkins", "Fastlane", "Firebase", "Crashlytics", "Play Console"],
+    items: ["GitHub Actions", "Firebase App Distribution", "Maven Publish", "Fastlane", "Crashlytics", "Play Console"],
   },
 ];
 

@@ -15,21 +15,23 @@ export const company = {
   github: "https://github.com/KanayaLalKhatri",
   facebook: "https://facebook.com/studio.kkgroup",
   intro:
-    "KK Group is a digital product studio crafting secure, high-performance mobile apps and websites. From KYC & biometric onboarding to fintech, e-commerce, and AI-powered experiences — we turn ideas into polished, production-grade products.",
+    "KK Group is a digital product studio crafting secure, high-performance mobile apps and websites — native Android, iOS and Kotlin Multiplatform, shipping one codebase to both platforms. From KYC & biometric onboarding to fintech, e-commerce, and AI-powered experiences — we turn ideas into polished, production-grade products.",
   about: [
     "We're a team of mobile and web engineers with 7+ years of experience building for banking, fintech, and digital-identity clients across Pakistan, the UAE, and Europe.",
-    "Our work spans native Android (Kotlin, Jetpack Compose), Flutter, and modern web — backed by Clean Architecture, strong security (SSL pinning, biometrics, encryption), and on-device ML. We obsess over performance, design, and long-term maintainability.",
+    "Our work spans Kotlin Multiplatform & Compose Multiplatform (one codebase for Android + iOS), native Android (Kotlin, Jetpack Compose), Flutter, and modern web — backed by Clean Architecture, strong security (SSL pinning, biometrics, encryption), and on-device ML. We obsess over performance, design, and long-term maintainability.",
   ],
   stats: [
     { value: "7+", label: "Years of Experience" },
     { value: "20+", label: "Apps & Products Shipped" },
     { value: "3", label: "Regions Served" },
-    { value: "98%", label: "Verification Accuracy" },
+    { value: "KMP", label: "Android + iOS, one codebase" },
   ],
 };
 
 // Real brands / companies our team has built products for.
 export const clients: string[] = [
+  "Abu Dhabi Aviation",
+  "Quepass",
   "Yapı Kredi",
   "Veripark",
   "DivDash",
@@ -50,8 +52,8 @@ export const services: Service[] = [
     icon: "Smartphone",
     title: "Mobile App Development",
     description:
-      "Native Android (Kotlin, Jetpack Compose) and cross-platform Flutter apps — fast, secure, and beautifully crafted.",
-    points: ["Android & iOS (Flutter)", "Jetpack Compose", "Clean Architecture / MVVM"],
+      "Kotlin Multiplatform apps that ship to Android and iOS from one codebase, plus native Android and Flutter — fast, secure, and beautifully crafted.",
+    points: ["Kotlin & Compose Multiplatform", "Native Android · Flutter", "Clean Architecture / MVI"],
   },
   {
     icon: "Globe",
@@ -83,10 +85,10 @@ export const services: Service[] = [
   },
   {
     icon: "Wrench",
-    title: "Maintenance & Support",
+    title: "CI/CD, Releases & Support",
     description:
-      "Ongoing updates, performance tuning, and store releases so your product keeps improving.",
-    points: ["CI/CD & releases", "Performance tuning", "Monitoring & fixes"],
+      "Automated pipelines that build, sign and ship every release — then monitoring and updates so your product keeps improving.",
+    points: ["GitHub Actions pipelines", "Firebase / TestFlight / Play releases", "Crashlytics monitoring & fixes"],
   },
 ];
 
