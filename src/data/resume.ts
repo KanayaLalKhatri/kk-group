@@ -46,6 +46,10 @@ export const experience: Experience[] = [
       "Built shared-Kotlin crypto for ISO 18013-5 mDoc, COSE/JWS and a from-scratch CBOR codec — 16-test RFC/NIST conformance suite passing on JVM and Kotlin/Native.",
       "Migrated client apps (Quepass, Use Case App, Idp wallet, Angle) to KMP with Ktor, Koin, SQLDelight and MVI; CI runs the shared test suite on JVM and iOS simulator.",
       "Built Avix — an airport check-in kiosk for an aviation client (KMP, Android + iOS) with hardware-backed device identity: P-256 keys in Android Keystore / iOS Secure Enclave, signed handshake, heartbeat and per-visit SDK credentials.",
+      "Built Camel Race Registration — a KMP Android + iOS app for on-site event registration with Emirates ID government verification, kiosk mode and full Arabic / RTL support.",
+      "Hardened the Quepass SDK (Android + native iOS): hardware-backed device keys, App Attest, signed image bundles, frame-integrity watermarking and an R8 release gate.",
+      "Worked on Copnex360, a compliance journey platform (Fastify / TypeScript Turborepo) — case-manager console, rule catalogue, tiers and brand identities — plus its KMP SDK.",
+      "Delivered web projects end to end, e.g. a Next.js + Supabase store website with a mobile-first admin PWA for stock, prices and photo uploads.",
       "Set up release pipelines on GitHub Actions: SDK publishing to GitHub Packages with auto version stamps, Android & signed iOS builds to Firebase App Distribution / TestFlight, Crashlytics on both platforms.",
       "Led end-to-end development of KYC and Digital Onboarding solutions — Face Liveness detection, OCR document scanning, and biometric authentication — reducing verification time by 35%.",
       "Architected production-grade Android apps from scratch using MVVM and Clean Architecture for scalability and maintainability.",
@@ -133,9 +137,67 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: "Camel Race Registration",
+    category: "Gov Registration · Kotlin Multiplatform",
+    period: "Nov 2026",
+    featured: true,
+    shots: ["/projects/camel-race/1.jpg", "/projects/camel-race/2.jpg", "/projects/camel-race/3.jpg"],
+    colors: ["#2f7d55", "#1b4332"],
+    screenIcon: "🐪",
+    screenLabel: "Register rider",
+    description:
+      "On-site registration and verification app for camel-race events, built as one Kotlin Multiplatform app for Android and iOS. Riders register at the venue, identity is checked against government records via Emirates ID, and organisers verify existing entries — with a self-service kiosk mode for the venue.",
+    highlights: [
+      "Register, verify and self-service kiosk flows from one Compose MP codebase",
+      "Government identity verification (Emirates ID) inside the registration journey",
+      "Full English / Arabic with RTL layouts, light & dark themes",
+      "Production build with masked credentials, releases via Firebase App Distribution",
+    ],
+    tags: ["Kotlin Multiplatform", "Compose MP", "RTL / Arabic", "Kiosk", "Firebase"],
+  },
+  {
+    name: "Zass — Laptop Store Website + Admin Portal",
+    category: "Web · Next.js + Supabase",
+    period: "Nov 2026",
+    featured: true,
+    banner: "/projects/zass/banner.jpg",
+    shots: ["/projects/zass/1.jpg", "/projects/zass/2.jpg", "/projects/zass/3.jpg"],
+    colors: ["#e8742a", "#9a3412"],
+    screenIcon: "💻",
+    screenLabel: "Laptop store",
+    description:
+      "Website and inventory admin for a Karachi laptop shop. Customers browse new & used laptops by brand and condition and ask for prices on WhatsApp; the shop owner manages stock, prices and photos from a mobile-first admin portal that installs like an app.",
+    highlights: [
+      "Next.js static site on GitHub Pages, live stock from Supabase",
+      "Mobile-first admin PWA — add / edit laptops, featured & sold toggles, search",
+      "Photos straight from the phone camera, compressed to WebP in the browser before upload",
+      "Row-level security: public read, admin-only writes, sign-ups disabled",
+    ],
+    tags: ["Next.js", "TypeScript", "Tailwind", "Supabase", "PWA"],
+  },
+  {
+    name: "Copnex360 — Compliance Journey Platform",
+    category: "KYC Platform · Web + KMP SDK",
+    period: "Nov 2026",
+    featured: true,
+    shots: ["/projects/copnex/1.jpg", "/projects/copnex/2.jpg", "/projects/copnex/3.jpg"],
+    colors: ["#b08a2e", "#3f3a2e"],
+    screenIcon: "✅",
+    screenLabel: "Verify identity",
+    description:
+      "Compliance and KYC journey platform: a case-manager console where teams configure rule catalogues, tiers and brand identities, and single-use verification links that run the customer journey — consent, identity checks and screening. The journey also ships as a Kotlin Multiplatform SDK for host apps.",
+    highlights: [
+      "Case-manager console — rule catalogue, tiers, per-client brand identities",
+      "Single-use journey links with consent steps and clear error states",
+      "Fastify + TypeScript Turborepo backend and web apps",
+      "Copnex360 KMP SDK + demo host app for Android and iOS",
+    ],
+    tags: ["TypeScript", "Fastify", "Turborepo", "Kotlin Multiplatform", "KYC"],
+  },
+  {
     name: "Avix — Airport Check-in Kiosk",
     category: "Airport Check-in · Kotlin Multiplatform",
-    period: "Oct 2026",
+    period: "Oct – Nov 2026",
     featured: true,
     shots: ["/projects/avix/1.jpg", "/projects/avix/2.jpg", "/projects/avix/3.jpg"],
     colors: ["#3b5bdb", "#14336b"],
@@ -148,7 +210,8 @@ export const projects: Project[] = [
       "AVIX Secure Kiosk API — enrol, check-in, identify, baggage, boarding states",
       "Flight selection for check-in & boarding, kiosk settings, waiting screen between passengers",
       "Idenex v2 design foundation — Light / Dark and Navy / Gold themes, carried into the SDK screens",
-      "Signed Android + iOS (Ad Hoc) releases to Firebase App Distribution",
+      "Flight manifest, front-camera document capture and UI parity with the web kiosk",
+      "146 automated tests; signed Android + iOS (Ad Hoc) releases to Firebase App Distribution",
     ],
     tags: ["Kotlin Multiplatform", "Compose MP", "Secure Enclave", "Keystore", "Quepass SDK", "CI/CD"],
   },
@@ -188,6 +251,7 @@ export const projects: Project[] = [
       "SDK published to GitHub Packages by CI with auto version stamps",
       "Signed iOS + Android builds shipped via Firebase App Distribution / TestFlight",
       "Host theming API — appearance, accent seed & KioskStyle branding for kiosk and capture screens",
+      "Security hardening — Keystore / Secure Enclave device keys, App Attest, signed image bundles, frame-integrity watermark, R8 release gate",
       "Lottie face overlays (Compottie), Crashlytics + shareable diagnostics log",
     ],
     tags: ["Compose Multiplatform", "iOS", "Android", "Idenex SDK"],
@@ -524,11 +588,15 @@ export const projects: Project[] = [
 export const skills: { category: string; items: string[] }[] = [
   {
     category: "Languages",
-    items: ["Kotlin", "Java", "Swift (interop)", "Dart", "SQL"],
+    items: ["Kotlin", "Java", "Swift", "TypeScript", "Dart", "SQL"],
   },
   {
     category: "Mobile & UI",
     items: ["Kotlin Multiplatform", "Compose Multiplatform", "Jetpack Compose", "Android SDK", "iOS (CoreNFC)", "Flutter"],
+  },
+  {
+    category: "Web & Backend",
+    items: ["Next.js", "React", "Tailwind CSS", "Fastify", "Supabase / Postgres", "PWA"],
   },
   {
     category: "Architecture",
@@ -540,7 +608,7 @@ export const skills: { category: string; items: string[] }[] = [
   },
   {
     category: "Security & Auth",
-    items: ["NFC eMRTD", "ISO 18013-5 mDoc", "COSE / JWS / CBOR", "Biometric Auth", "SSL Pinning", "OAuth 2.0"],
+    items: ["NFC eMRTD", "ISO 18013-5 mDoc", "COSE / JWS / CBOR", "Biometric Auth", "SSL Pinning", "OAuth 2.0", "App Attest", "Secure Enclave / Keystore"],
   },
   {
     category: "AI / ML",
