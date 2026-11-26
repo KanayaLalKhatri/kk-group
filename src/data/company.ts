@@ -37,6 +37,7 @@ export const clients: string[] = [
   "Cognetlabs",
   "Idenex",
   "Symmetry Group",
+  "Zass · Jimmy Laptop Traders",
 ];
 
 export type Service = {
@@ -58,8 +59,15 @@ export const services: Service[] = [
     icon: "Globe",
     title: "Web Design & Development",
     description:
-      "Modern, responsive websites and web apps with smooth animations and excellent performance.",
-    points: ["Next.js / React", "Responsive & SEO-ready", "Landing pages & dashboards"],
+      "Modern, responsive websites and web apps — business sites, online catalogues and stores with a real backend, live stock and WhatsApp ordering.",
+    points: ["Next.js / React / Tailwind", "Responsive & SEO-ready", "Supabase / Postgres backends"],
+  },
+  {
+    icon: "LayoutDashboard",
+    title: "Admin Portals & Dashboards",
+    description:
+      "Mobile-first admin panels so you manage your own content — products, prices and photos straight from your phone, no developer needed.",
+    points: ["Installable PWA admin", "Camera uploads, auto-compressed", "Secure logins & role-based access"],
   },
   {
     icon: "Palette",
@@ -70,17 +78,10 @@ export const services: Service[] = [
   },
   {
     icon: "ShieldCheck",
-    title: "KYC & Biometric Solutions",
+    title: "KYC, Biometrics & AI",
     description:
-      "Digital onboarding with face liveness, OCR document scanning, and secure identity verification.",
-    points: ["Face liveness & OCR", "Digital identity / mDoc", "Secure onboarding SDKs"],
-  },
-  {
-    icon: "Cpu",
-    title: "AI / ML Integration",
-    description:
-      "On-device intelligence — computer vision, detection, and inference optimized for mobile.",
-    points: ["TensorFlow Lite / ML Kit", "Computer vision", "On-device inference"],
+      "Digital onboarding with face liveness, OCR document scanning and secure identity verification — powered by on-device ML.",
+    points: ["Face liveness & OCR", "Digital identity / mDoc", "TensorFlow Lite / on-device ML"],
   },
   {
     icon: "Wrench",
@@ -97,6 +98,6 @@ export const process: Step[] = [
   { title: "Discover", description: "We understand your goals, users, and scope to define the right solution." },
   { title: "Design", description: "We craft wireframes and a polished UI/UX that fits your brand." },
   { title: "Develop", description: "We build secure, scalable apps with clean, maintainable code." },
-  { title: "Deploy", description: "We ship to the stores and the web with CI/CD and QA." },
+  { title: "Deploy", description: "We ship to the App Store, Play Store and the web with CI/CD and QA." },
   { title: "Support", description: "We monitor, iterate, and keep your product fast and reliable." },
 ];

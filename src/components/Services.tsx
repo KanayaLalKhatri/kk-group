@@ -6,7 +6,7 @@ import {
   Globe,
   Palette,
   ShieldCheck,
-  Cpu,
+  LayoutDashboard,
   Wrench,
   type LucideIcon,
 } from "lucide-react";
@@ -18,7 +18,7 @@ const icons: Record<string, LucideIcon> = {
   Globe,
   Palette,
   ShieldCheck,
-  Cpu,
+  LayoutDashboard,
   Wrench,
 };
 
